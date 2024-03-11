@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ product.name }}</h1>
+      <span>Price: {{ product.price }}</span>
+      <img :src="product.imageUrl" alt="Product Image" />
+      <button @click="updatePrice">Получить скидку</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          product: {
+            name: "Product",
+            price: 100,
+            imageUrl:
+              "https://storage.pravo.ru/image/173/86665.png?v=1647933714",
+          },
+        },
+        methods: {
+          updatePrice() {
+            const random = Math.floor(Math.random() * 10);
+            this.product.price -= random;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
