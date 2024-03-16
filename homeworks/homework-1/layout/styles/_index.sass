@@ -1,0 +1,163 @@
+.banner
+    @extend .center
+    margin-bottom: 96px
+
+    &__inner
+        position: relative
+
+    &__intro
+        position: absolute
+        top: 208px
+        left: 62px
+        width: 434px
+
+        &-title
+            font-family: "DM Serif Display"
+            font-size: 65px
+            line-height: 125%
+            margin-bottom: 18px
+
+        &-text
+            line-height: 150%
+            margin-bottom: 18px
+
+    &__button
+        color: #fff
+        background-color: #292F36
+        border-radius: 18px
+        font-size: 18px
+        font-weight: 600
+        line-height: 125%
+        padding: 26px 49px
+
+.project
+    @extend .center
+    @include flex_column_center()
+    margin-bottom: 93px
+
+    &__inner
+        @include flex_column_center_gap(8px)
+        max-width: 737px
+
+    &__title
+        font-family: "DM Serif Display"
+        font-size: 50px
+        line-height: 125%
+
+    &__text
+        text-align: center
+        line-height: 150%
+
+.product
+    &-box
+        @extend .center
+        margin-bottom: 96px
+        display: grid
+        grid-template-columns: repeat(2, $halfSide)
+        gap: 56px 104px
+
+    &__image
+        width: 100%
+        margin-bottom: 24px
+
+    &__content
+        display: flex
+        justify-content: space-between
+
+.counter
+    display: flex
+    gap: 60px
+    text-align: center
+
+    &:not(:last-child)::after
+        content: ''
+
+        border-right: 1px solid #cda274
+
+    &-box
+        @extend .center
+        margin-bottom: 96px
+        padding-top: 151px
+        padding-bottom: 151px
+        background-color: #f4f0ec
+        display: flex
+        justify-content: center
+
+    &__inner
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        gap: 76px
+
+    &__title
+        font-family: "DM Serif Display"
+        font-size: 85px
+        line-height: 125%
+        color: #CDA274
+
+.blog
+    @extend .center
+    @include flex_column_center()
+    margin-bottom: 52px
+
+    &__heading
+        @include flex_column_center_gap(12px)
+        max-width: 811px
+
+    &__title
+        font-family: "DM Serif Display"
+        font-size: 50px
+        line-height: 125%
+
+    &__text
+        text-align: center
+        line-height: 150%
+
+.article
+    padding: 21px
+    border-radius: 75px
+    border: 1px solid #E7E7E7
+
+    &-box
+        @extend .center
+        display: grid
+        grid-template-columns: repeat(3, $thirdSide)
+        gap: 27px
+        margin-bottom: 96px
+
+    &__content
+        position: relative
+        padding-bottom: 16px
+
+    &__image
+        margin-bottom: 21px
+
+    &__button-box
+        display: flex
+        position: absolute
+        border-radius: 10px 10px 10px 0
+        top: 228px
+        left: 20px
+        background-color: #fff
+        padding: 11px 6px
+
+    &__button
+        font-size: 16px
+        line-height: 150%
+
+    &__title
+        font-family: "DM Serif Display"
+        font-size: 25px
+        font-weight: 400
+        line-height: 125%
+        width: 305px
+        height: 70px
+        margin-bottom: 30px
+
+    &-nav
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &_select
+        background-color: #F4F0EC
