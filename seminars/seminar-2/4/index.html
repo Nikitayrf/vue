@@ -4,31 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .registration {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 300px;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
-      <form @submit="addContact">
+      <form @submit="addContact" class="registration">
         <label for="firstName">Имя:</label>
-        <input type="text" id="firstName" v-model="newContact.firstName" />
-
+        <input
+          type="text"
+          id="firstName"
+          v-model.trim="newContact.firstName"
+          required
+        />
         <label for="lastName">Фамилия:</label>
-        <input type="text" id="lastName" v-model="newContact.lastName" />
-
+        <input
+          type="text"
+          id="lastName"
+          v-model.trim="newContact.lastName"
+          required
+        />
         <label for="email">Email:</label>
-        <input type="email" id="email" v-model="newContact.email" />
-
+        <input
+          type="email"
+          id="email"
+          v-model.trim="newContact.email"
+          required
+        />
         <button type="submit">Добавить контакт</button>
       </form>
-
       <ul>
         <li v-for="contact in contacts" :key="contact.email">
-          {{ contact.firstName }} {{ contact.lastName }} - {{ contact.email }}
+          {{contact.firstName}} {{contact.lastName}} - {{contact.email}}
         </li>
       </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
-      const app = new Vue({
+      new Vue({
         el: "#app",
         data: {
           newContact: {

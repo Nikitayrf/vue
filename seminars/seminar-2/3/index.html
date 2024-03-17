@@ -6,34 +6,43 @@
     <title>Document</title>
     <style>
       .products {
-        display: flex;
-        gap: 20px;
+        list-style-type: none;
       }
     </style>
   </head>
   <body>
     <!-- Вы разрабатываете приложение для создания списка покупок. У вас есть массив объектов items, где каждый объект представляет товар с его названием и количеством. Вам необходимо отобразить список товаров, предоставить возможность изменять количество каждого товара и отмечать товары, которые уже куплены. -->
     <div id="app">
-      <div v-for="item in  products" class="products">
-        <input min="1" type="number" v-model="item.quantity" />
-        <input type="checkbox" name="" id="" v-model="item.bought" />
-        <div>{{item.bought}}</div>
-        <div>{{ item.name }}</div>
-        <div>{{ item.quantity }}</div>
-      </div>
+      <ul class="products">
+        <li class="product" v-for="item in products" :key="item.id">
+          <input type="number" min="1" v-model="item.quantity" />
+          <input type="checkbox" v-model="item.bought" />
+          <span class="name">{{item.name}}</span>
+          {{item.bought}} - {{item.quantity}}
+        </li>
+      </ul>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
       new Vue({
         el: "#app",
         data: {
+          count: 0,
           products: [
             { id: 1, name: "Молоко", quantity: 2, bought: false },
             { id: 2, name: "Хлеб", quantity: 1, bought: true },
             { id: 3, name: "Яблоки", quantity: 5, bought: false },
             { id: 4, name: "Мясо", quantity: 0, bought: false },
           ],
+        },
+        methods: {
+          buyItem(button) {
+            if (!button.inCart) {
+              this.count++;
+              button.inCart = true;
+              button.text = "Товар в Корзине";
+            }
+          },
         },
       });
     </script>

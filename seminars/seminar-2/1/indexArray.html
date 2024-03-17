@@ -11,28 +11,51 @@
         2. Добавьте кнопку, которая будет изменять цену товара. При
         нажатии на кнопку должна генерироваться скидка на товар от 1 до 20% и обновиться цена товара в соответствии с значением скидки. -->
     <div id="app">
-      <h1>{{ product.name }}</h1>
-      <span>Price:{{ product.price }}</span>
-      <img :src="product.imageUrl" alt="Product Image" />
-      <button @click="updatePrice">Получить скидку</button>
+      <div
+        v-for="product in productItems"
+        :key="product.id"
+        class="product__list"
+      >
+        <h1>{{ product.name }}</h1>
+        <span>Price:{{ product.price }}</span>
+        <img :src="product.imageUrl" alt="Product Image" />
+        <button @click="updatePrice(product.id)">Получить скидку</button>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
       new Vue({
         el: "#app",
         data: {
-          product: {
-            name: "Название продукта",
-            price: 100,
-            imageUrl:
-              "https://storage.pravo.ru/image/173/86665.png?v=1647933714",
-          },
+          productItems: [
+            {
+              id: 0,
+              name: "Product 1",
+              price: 100,
+              imageUrl:
+                "https://storage.pravo.ru/image/173/86665.png?v=1647933714",
+            },
+            {
+              id: 1,
+              name: "Product 2",
+              price: 90,
+              imageUrl:
+                "https://storage.pravo.ru/image/173/86665.png?v=1647933714",
+            },
+            {
+              id: 2,
+              name: "Product 3",
+              price: 80,
+              imageUrl:
+                "https://storage.pravo.ru/image/173/86665.png?v=1647933714",
+            },
+          ],
         },
         methods: {
-          getDiscount() {
+          updatePrice(id) {
             const random = Math.floor(Math.random() * 20) + 1;
-            this.product.price -= Math.floor(
-              (this.product.price / 100) * random
+            this.productItems[id].price -= Math.floor(
+              (this.productItems[id].price / 100) * random
             );
           },
         },
