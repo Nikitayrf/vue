@@ -56,23 +56,13 @@ a {
   text-decoration: none;
 }
 
-.center, .article-box, .blog, .counter-box, .product-box, .project, .banner, .footer__inner, .header {
+.pagination, .latest-post, .blog-big, .article-box, .blog, .counter, .project-box, .project, .hero, .footer__inner, .header {
   padding-left: calc(50% - 600px);
   padding-right: calc(50% - 600px);
 }
-
-.logo {
-  display: block;
-}
-
-.button {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-}
-.button__icon_right {
-  margin-left: 10px;
+.banner {
+  padding-left: calc(50% - 960px);
+  padding-right: calc(50% - 960px);
 }
 
 .breadcrumbs__ul {
@@ -100,6 +90,9 @@ a {
   margin-top: 44px;
   margin-bottom: 57px;
 }
+.header__logo {
+  display: block;
+}
 .header__menu-list {
   display: flex;
   flex-wrap: wrap;
@@ -117,6 +110,7 @@ a {
   display: flex;
 }
 .footer__logo {
+  display: block;
   margin-bottom: 18px;
 }
 .footer__social {
@@ -126,14 +120,19 @@ a {
 .footer__social-text {
   margin-bottom: 31px;
 }
-.footer__social-heading {
-  font-family: "DM Serif Display";
-  font-size: 25px;
-  line-height: 125%;
+.footer__social-icons-box {
+  display: flex;
+  align-items: center;
+  gap: 54px;
 }
 .footer__menu {
   width: 125px;
   margin-right: 322px;
+}
+.footer__menu-heading {
+  font-family: "DM Serif Display";
+  font-size: 25px;
+  line-height: 125%;
 }
 .footer__menu-list {
   display: flex;
@@ -150,6 +149,9 @@ a {
   width: 258px;
 }
 .footer__contact-title {
+  font-family: "DM Serif Display";
+  font-size: 25px;
+  line-height: 125%;
   margin-bottom: 26px;
 }
 .footer__contact-box {
@@ -158,94 +160,88 @@ a {
   gap: 30px;
 }
 
-.social-icons {
-  display: flex;
-  align-items: center;
-}
-.social-icons__twitter {
-  margin-right: 54px;
-}
-
-.banner {
+.hero {
   margin-bottom: 96px;
 }
-.banner__inner {
+.hero__main {
+  margin-bottom: 21px;
+}
+.hero__inner {
   position: relative;
 }
-.banner__intro {
+.hero__intro {
   position: absolute;
   top: 208px;
   left: 62px;
   width: 434px;
 }
-.banner__intro-title {
+.hero__intro-title {
   font-family: "DM Serif Display";
-  font-size: 65px;
   line-height: 125%;
+  font-size: 65px;
   margin-bottom: 18px;
 }
-.banner__intro-text {
-  line-height: 150%;
-  margin-bottom: 18px;
-}
-.banner__button {
+.hero__btn {
+  display: flex;
+  align-items: center;
   color: #fff;
   background-color: #292F36;
   border-radius: 18px;
   font-size: 18px;
-  font-weight: 600;
   line-height: 125%;
+  font-weight: 600;
   padding: 26px 49px;
+}
+.hero__btn-icon {
+  margin-left: 10px;
 }
 
 .project {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 93px;
+  margin-bottom: 96px;
 }
-.project__inner {
+.project__heading {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
   max-width: 737px;
+  margin-bottom: 93px;
 }
-.project__title {
+.project__heading-title {
   font-family: "DM Serif Display";
   font-size: 50px;
   line-height: 125%;
+  margin-bottom: 8px;
 }
-.project__text {
+.project__heading-text {
   text-align: center;
   line-height: 150%;
 }
 
-.product-box {
+.project-box {
   margin-bottom: 96px;
   display: grid;
   grid-template-columns: repeat(2, 548px);
   gap: 56px 104px;
 }
-.product__image {
+.project-box__img {
   width: 100%;
   margin-bottom: 24px;
 }
-.product__content {
+.project-box__content {
   display: flex;
   justify-content: space-between;
 }
+.project-box__title {
+  font-family: "DM Serif Display";
+  font-size: 25px;
+  line-height: 125%;
+  margin-bottom: 4px;
+}
 
 .counter {
-  display: flex;
-  gap: 60px;
-  text-align: center;
-}
-.counter:not(:last-child)::after {
-  content: "";
-  border-right: 1px solid #cda274;
-}
-.counter-box {
   margin-bottom: 96px;
   padding-top: 151px;
   padding-bottom: 151px;
@@ -253,24 +249,35 @@ a {
   display: flex;
   justify-content: center;
 }
-.counter__inner {
+
+.counter-box {
+  display: flex;
+  gap: 60px;
+  text-align: center;
+}
+.counter-box__item {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 76px;
 }
-.counter__title {
+.counter-box__item:not(:last-child)::after {
+  content: "";
+  border-right: 1px solid #cda274;
+}
+.counter-box__item-title {
   font-family: "DM Serif Display";
   font-size: 85px;
   line-height: 125%;
   color: #CDA274;
+  padding-bottom: 16px;
 }
 
 .blog {
+  margin-bottom: 96px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 52px;
 }
 .blog__heading {
   display: flex;
@@ -278,13 +285,15 @@ a {
   align-items: center;
   gap: 12px;
   max-width: 811px;
+  margin-bottom: 52px;
 }
-.blog__title {
+.blog__heading-title {
   font-family: "DM Serif Display";
   font-size: 50px;
   line-height: 125%;
+  margin-bottom: 12px;
 }
-.blog__text {
+.blog__heading-text {
   text-align: center;
   line-height: 150%;
 }
@@ -298,16 +307,15 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 382px);
   gap: 27px;
-  margin-bottom: 96px;
 }
 .article__content {
   position: relative;
   padding-bottom: 16px;
 }
-.article__image {
+.article__img {
   margin-bottom: 21px;
 }
-.article__button-box {
+.article__button {
   display: flex;
   position: absolute;
   border-radius: 10px 10px 10px 0;
@@ -315,8 +323,6 @@ a {
   left: 20px;
   background-color: #fff;
   padding: 11px 6px;
-}
-.article__button {
   font-size: 16px;
   line-height: 150%;
 }
@@ -336,4 +342,111 @@ a {
 }
 .article_select {
   background-color: #F4F0EC;
+}
+
+.banner {
+  margin-bottom: 200px;
+}
+.banner__inner {
+  position: relative;
+  margin-bottom: 200px;
+}
+.banner__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 503px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #fff;
+  padding: 41px 78px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+.banner__title {
+  font-family: "DM Serif Display";
+  font-size: 50px;
+  line-height: 125%;
+}
+
+.blog-big {
+  margin-bottom: 200px;
+}
+
+.news__title {
+  font-family: "DM Serif Display";
+  font-size: 50px;
+  line-height: 125%;
+}
+
+.latest-post {
+  margin-bottom: 150px;
+}
+.latest-post__heading {
+  font-family: "DM Serif Display";
+  font-size: 50px;
+  line-height: 125%;
+  margin-bottom: 27px;
+}
+.latest-post__box {
+  display: flex;
+  gap: 65px;
+  padding: 21px;
+  border-radius: 75px;
+  border: 1px solid #E7E7E7;
+}
+.latest-post__content-box {
+  margin-top: 54px;
+  margin-right: 34px;
+}
+.latest-post__content {
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+.latest-post__title {
+  font-family: "DM Serif Display";
+  font-size: 25px;
+  line-height: 125%;
+  margin-bottom: 22px;
+}
+.latest-post__text {
+  line-height: 150%;
+}
+.latest-post-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination {
+  margin-top: 51px;
+}
+.pagination__item {
+  width: 52px;
+  height: 52px;
+  border: 1px solid #CDA274;
+  border-radius: 50%;
+  color: #292F36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination__item:hover {
+  background: #F4F0EC;
+  border: 1px solid #F4F0EC;
+}
+.pagination__text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.pagination-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }/*# sourceMappingURL=style.css.map */
