@@ -56,7 +56,7 @@ a {
   text-decoration: none;
 }
 
-.pagination, .latest-post, .blog-big, .article-box, .blog, .counter, .project-box, .project, .hero, .footer__inner, .header {
+.pagination, .latest-post, .article-box, .blog, .counter, .project-box, .project, .hero, .footer__inner, .header {
   padding-left: calc(50% - 600px);
   padding-right: calc(50% - 600px);
 }
@@ -372,7 +372,7 @@ a {
   line-height: 125%;
 }
 
-.blog-big {
+.blog {
   margin-bottom: 200px;
 }
 
