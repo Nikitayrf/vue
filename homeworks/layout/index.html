@@ -276,8 +276,8 @@
           </p>
         </div>
         <div class="news">
-          <ul id="app" class="article-box">
-            <li
+          <div id="app" class="article-box">
+            <article
               class="article"
               v-for="article in articles.slice(0,3)"
               :key="article.id"
@@ -310,8 +310,8 @@
                   </svg>
                 </div>
               </div>
-            </li>
-          </ul>
+            </article>
+          </div>
         </div>
       </section>
 

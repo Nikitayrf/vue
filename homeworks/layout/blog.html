@@ -106,8 +106,8 @@
 
         <div class="news">
           <h2 class="news__title">Articles & News</h2>
-          <ul id="app" class="article-box">
-            <li
+          <div id="app" class="article-box">
+            <article
               class="article"
               v-for="article in articles.slice(0,6)"
               :key="article.id"
@@ -140,8 +140,8 @@
                   </svg>
                 </div>
               </div>
-            </li>
-          </ul>
+            </article>
+          </div>
         </div>
 
         <div class="pagination">
