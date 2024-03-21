@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Создайте компонент списка дел, в котором можно добавлять и удалять элементы. Каждый элемент списка должен иметь кнопку удаления, при нажатии на которую элемент списка будет удаляться. -->
+    <div id="app">
+      <todo-list></todo-list>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      Vue.component("todo-list", {
+        template: `
+            <div>
+                <input type="text" v-model.trim="newItem" placeholder="Добавить элемент">
+                <button @click="addItem">Добавить</button>
+                <ul>
+                    <li v-for="item in items" :key="item.id">
+                        {{ item.name }} 
+                        <button @click="removeItem(item.id)" >Удалить</button>
+                    </li>
+                </ul>
+            </div>
+        `,
+        data() {
+          return {
+            newItem: "",
+            items: [],
+          };
+        },
+        methods: {
+          addItem() {
+            if (this.newItem) {
+              const newItem = {
+                id: Date.now(),
+                name: this.newItem,
+              };
+              this.items.push(newItem);
+              this.newItem = "";
+            }
+          },
+          removeItem(itemId) {
+            this.items = this.items.filter((item) => item.id !== itemId);
+          },
+        },
+      });
+    </script>
+    <script>
+      new Vue({
+        el: "#app",
+      });
+    </script>
+  </body>
+</html>

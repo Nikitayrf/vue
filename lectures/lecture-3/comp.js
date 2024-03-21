@@ -3,7 +3,7 @@ const compItem = {
     template: '<p>item info</p>'
 }
 
-const comp = Vue.component('new-component', {
+Vue.component('new-component', {
     props: ['title', 'newTest'],
     data() {
         return {
