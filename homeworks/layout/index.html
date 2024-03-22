@@ -275,24 +275,22 @@
             points of using.
           </p>
         </div>
-        <div class="news">
-          <div id="app" class="article-box">
+        <div class="news-articles">
+          <div id="app" class="news-box">
             <article
-              class="article"
-              v-for="article in articles.slice(0,3)"
-              :key="article.id"
+              class="news"
+              v-for="news in listNews.slice(0,3)"
+              :key="news.id"
             >
-              <div class="article__content">
-                <img class="article__img" :src="article.image" alt="" />
-                <a class="article__button" href="#">Kitchan Design</a>
-                <h3 class="article__title">{{article.title}}</h3>
+              <div class="news__content">
+                <img class="news__img" :src="news.image" alt="" />
+                <a class="news__button" href="#">Kitchan Design</a>
+                <h3 class="news__title">{{news.title}}</h3>
 
-                <div class="article-nav">
-                  <span class="article-nav__date-news"
-                    >{{article.dateNews}}</span
-                  >
+                <div class="news-nav">
+                  <span class="news-nav__date-news">{{news.date}}</span>
                   <svg
-                    class="article-nav__arrow"
+                    class="news-nav__arrow"
                     width="70"
                     height="70"
                     viewBox="0 0 70 70"
