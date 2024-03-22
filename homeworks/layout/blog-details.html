@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
+    <title>Blog details</title>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
@@ -31,126 +31,13 @@
         </nav>
       </header>
 
-      <section class="banner">
-        <div class="banner__inner">
-          <div class="banner__intro">
-            <h2 class="banner__title">Articles & News</h2>
-            <nav class="breadcrumbs">
-              <ul class="breadcrumbs__ul">
-                <li class="breadcrumbs__li">
-                  <a href="#" class="breadcrumbs__link">Home</a>
-                </li>
-                <li class="breadcrumbs__li">
-                  <a href="#" class="breadcrumbs__link">Blog</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
+      <section class="banner-top">
+        <div class="banner-top__inner"></div>
       </section>
 
-      <section class="blog">
-        <div class="latest-post">
-          <h2 class="latest-post__heading">Latest Post</h2>
-          <div class="latest-post__box">
-            <img
-              class="latest-post__img"
-              src="img/kitche_with_marble_island.png"
-              alt="latest post"
-            />
-            <div class="latest-post__content-box">
-              <div class="latest-post__content">
-                <h3 class="latest-post__title">
-                  Low Cost Latest Invented Interior Designing Ideas
-                </h3>
-                <p class="latest-post__text">
-                  Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
-                  turpis dignissim maximus.posuere in.Contrary to popular
-                  belief.
-                  <br />
-                  Lorem Ipsum is not simply random text. It has roots in a piece
-                  of classica.
-                </p>
-              </div>
-              <div class="latest-post-nav">
-                <span class="article-nav__date-news">26 December,2022 </span>
-                <svg
-                  class="latest-post-nav__arrow"
-                  width="70"
-                  height="70"
-                  viewBox="0 0 70 70"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
-                  <path
-                    d="M32 44L40 35L32 26"
-                    stroke="#292F36"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="news-articles">
-          <h2 class="news-articles__title">Articles & News</h2>
-          <div id="app" class="news-box">
-            <article
-              class="news"
-              v-for="news in listNews.slice(0,6)"
-              :key="news.id"
-            >
-              <div class="news__content">
-                <img class="news__img" :src="news.image" alt="" />
-                <a class="news__button" href="#">Kitchan Design</a>
-                <h3 class="news__title">{{news.title}}</h3>
-
-                <div class="news-nav">
-                  <span class="news-nav__date-news">{{news.date}}</span>
-                  <svg
-                    class="news-nav__arrow"
-                    width="70"
-                    height="70"
-                    viewBox="0 0 70 70"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
-                    <path
-                      d="M32 44L40 35L32 26"
-                      stroke="#292F36"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="pagination">
-          <div class="pagination-box">
-            <div class="pagination__item pagination__item-active">
-              <div class="pagination__text">01</div>
-            </div>
-            <div class="pagination__item">
-              <div class="pagination__text">02</div>
-            </div>
-            <div class="pagination__item">
-              <div class="pagination__text">03</div>
-            </div>
-            <div class="pagination__item">
-              <div class="pagination__text">></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div id="blog-details" class="blog-details">
+        <article-comp></article-comp>
+      </div>
 
       <footer class="footer">
         <div class="footer__inner">
@@ -227,8 +114,13 @@
           </div>
         </div>
       </footer>
-      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-      <script src="scripts/script.js"></script>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="scripts/articles.js"></script>
+    <script>
+      new Vue({
+        el: "#blog-details",
+      });
+    </script>
   </body>
 </html>
