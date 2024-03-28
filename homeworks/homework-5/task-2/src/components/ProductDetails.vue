@@ -1,7 +1,6 @@
 <template>
     <div>
-        <template v-if="isAvailable">Available</template>
-        <template v-else>Out of stock</template>
+        <h3>{{ isAvailable }}</h3>
         <p>{{ getProductName }} - {{ formattedPrice }}</p>
     </div>
 </template>
@@ -28,7 +27,7 @@ export default {
             return formatter.format(this.product.price);
         },
         isAvailable() {
-            return this.product.available;
+            return this.product.available ? 'Available' : 'Out of stock';
         },
         getProductName() {
             return this.product.name;
